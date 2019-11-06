@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     // should really get the user data here and then fetch it thru, but let's try this asynchronously
     console.log('at the main route');
 
-    let query = "SELECT ID, avatar, Name, Logo, JobTitle FROM tbl_card";
+    let query = "SELECT ID, name, gender, Age, nationality FROM favoritethings";
 
     sql.query(query, (err, result) => {
         if (err) {throw err; console.log(err);}
@@ -27,7 +27,6 @@ router.get('/users/:id', (req,res) =>{
     console.log(req.params.id);
     
     // under the code is to query the related data form the table and display in terminla 
-    let query = `SELECT * FROM tbl_bio WHERE profID="${req.params.id}"`;
 
     sql.query(query, (err, result) => {
         if (err) { throw err; console.log(err); }
