@@ -16,9 +16,10 @@ const myVM = (() => {
             targetImg = lightbox.querySelector('img');
 
         let bioContent = `
-            <p>${person.bio}</p>
-            <h4>Social Media:</h4>
-            ${renderSocialMedia(person.social)}
+            <p>${person.name}</p>
+            <p>${person.Age}</p>
+            <p>${person.gender}</p>
+            <p>${person.nationality}</p>
             `;
 
             console.log(bioContent);
@@ -35,7 +36,8 @@ const myVM = (() => {
         // find the image closest to the anchor tag and get its src property
         let imgSrc = this.previousElementSibling.getAttribute('src');
 
-        let url = `/users/${this.getAttribute('href')}`;  // /3
+        let url = `/${this.getAttribute('href')}`;  // /3
+        debugger;
 
         fetch(url)  // go get the data
             .then(res => res.json()) // parse the json result into a plain object
