@@ -10,11 +10,11 @@ body {
 
 h1, h2, h3 { color: $heading-color }
 
-.panel { min-height: 60vh; }
+.panel { min-height: 30vh; }
 
 .panel:nth-child(odd) {
-    background-color: paleturquoise;
-    color: white;
+    background-color: pink;
+    color: rgb(255, 255, 255);
 }
 
 #to-top { position: fixed; bottom: 10px; right: 10px; display: none; }
